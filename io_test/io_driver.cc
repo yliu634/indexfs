@@ -33,10 +33,12 @@ IOTask* FetchTask(int my_rank, int comm_sz) {
     task = "TreeTest";
     result = IOTaskFactory::GetTreeTestTask(my_rank, comm_sz);
   }
+  /*
   else if (FLAGS_task == "replay") {
     task = "TraceReplayTest";
     result = IOTaskFactory::GetReplayTestTask(my_rank, comm_sz);
   }
+  */
   else if (FLAGS_task == "sstcomp") {
     task = "ParallelCompactionTest";
     result = IOTaskFactory::GetCompactionTestTask(my_rank, comm_sz);

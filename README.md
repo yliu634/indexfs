@@ -42,12 +42,17 @@ performance are build with `MPI` -- at least one implementation of MPI
 ##### INSTALL SYSTEM PACKAGES
 
 * **Ubuntu**
-
-        sudo apt-get install gcc g++ make flex bison
-        sudo apt-get install autoconf automake libtool pkg-config
-        sudo apt-get install zlib1g-dev libsnappy-dev
-        sudo apt-get install libboost-all-dev libevent-dev libssl-dev
-        sudo apt-get install libfuse-dev libmpich-dev mpich pdsh
+        sudo apt -y update
+        sudo apt -y install cmake clang libboost-all-dev librados-dev
+        sudo apt -y install google-perftools libgoogle-perftools-dev cmake build-essential pkgconf
+        sudo apt -y install gdb libssl-dev tmux liblua5.3-dev
+        
+        sudo apt -y install gcc g++ make flex bison
+        sudo apt -y install autoconf automake libtool pkg-config
+        sudo apt -y install zlib1g-dev libsnappy-dev
+        sudo apt -y install libboost-all-dev libevent-dev libssl1.0-dev
+        sudo apt -y install libfuse-dev libmpich-dev mpich pdsh
+        sudo apt -y install default-jdk
 
 ##### Build & Install Depends
 
@@ -56,10 +61,12 @@ Use GNU standard building process to build and install `gflags`,
 
 * **To build gflags and glog**:
 
-        ./configure && make && sudo make install
-
+        sudo apt -y install libgoogle-glog-dev libgflags-dev
+        
 * **To build thrift**:
-
+        wget https://archive.apache.org/dist/thrift/0.10.0/thrift-0.10.0.tar.gz
+        tar -xvf thrift-0.10.0.tar.gz
+        cd thrift-0.10.0.tar.gz
         ./configure --without-qt4 --without-qt5 --without-c_glib \
                     --without-csharp --without-java --without-erlang \
                     --without-nodejs --without-lua --without-python \

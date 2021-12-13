@@ -74,7 +74,7 @@ Use GNU standard building process to build and install `gflags`,
                     --without-perl --without-php --without-php_extension  \
                     --without-ruby --without-haskell --without-go \
                     --without-haxe --without-d --enable-tests=no --enable-tutorial=no
-        make && sudo make install
+        make && sudo make install && sudo ldconfig
 
 BUILD INDEXFS FROM SOURCE
 -------------------------
